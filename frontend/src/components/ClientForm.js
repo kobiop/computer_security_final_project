@@ -31,9 +31,17 @@ export default function AddClientForm() {
     // Handle form submission
     const handleSubmit = async (event) => {
         event.preventDefault();
+        //Sanitize user input before sending
+        const sanitizedClientData = {
+            firstName: DOMPurify.sanitize(clientData.firstName),
+            lastName: DOMPurify.sanitize(clientData.lastName),
+            email: DOMPurify.sanitize(clientData.email),
+            phoneNumber: DOMPurify.sanitize(clientData.phoneNumber),
+            address: DOMPurify.sanitize(clientData.address)
+        };
         try {
             const response = await axios.post('http://localhost:5000/add-client', {
-                clientData: clientData
+                clientData: sanitizedClientData
             });
 
             if (response.status === 200) {
