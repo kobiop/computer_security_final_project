@@ -1,14 +1,13 @@
 from sqlalchemy import text
-from flask import jsonify
 from .. import db
 from ..config.config_functions import hash_password, password_config
-from sqlalchemy.exc import SQLAlchemyError
 
 
 def add_new_user(first_name, last_name, email, hashed_password, salt_hex):
     query = text(
         "INSERT INTO users (first_name, last_name, email, hashed_password) VALUES (:first_name, :last_name, :email, :hashed_password)"
     )
+    print(query)
     db.session.execute(
         query,
         {
@@ -90,6 +89,7 @@ def add_new_client(email, first_name, last_name, address, phone_number, user_id)
     query = text(
         "INSERT INTO clients (first_name, last_name, email, phone_number, address, user_id) VALUES (:first_name, :last_name, :email, :phone_number, :address, :user_id)"
     )
+    print(query)
     db.session.execute(
         query,
         {
