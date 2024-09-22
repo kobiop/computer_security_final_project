@@ -1,8 +1,6 @@
 from sqlalchemy import text
-from flask import jsonify
 from .. import db
 from ..config.config_functions import hash_password, password_config
-from sqlalchemy.exc import SQLAlchemyError
 
 
 def add_new_user(first_name, last_name, email, hashed_password, salt_hex):
@@ -90,8 +88,8 @@ def add_new_client(email, first_name, last_name, address, phone_number, user_id)
     db.session.commit()
 
 
-# sql# Robert', 'hazut', 'kobihazut8@gmail.com', '0503456747', 'belkind shimson 2', 56); DROP TABLE clients; --"
-# sqli# john', 'doe', 'jon123456@example123.com', '1234567890', 'address', 56) #
+# sqli # Robert', 'hazut', 'kobihazut8@gmail.com', '0503456747', 'belkind shimson 2', 56); DROP TABLE clients; --"
+# sqli # john', 'doe', 'jon123456@example123.com', '1234567890', 'address', 56) #
 # make sure to have a right user_id
 
 
