@@ -42,9 +42,9 @@ def clients():
 
     try:
         all_clients = fetch_all_clients_by_user_id(user_id)
-
         clients_list = []
         for client in all_clients:
+            print(client)
             client_dict = {
                 "id": client.id,
                 "first_name": client.first_name,
@@ -54,6 +54,7 @@ def clients():
                 "address": client.address,
                 "user_id": client.user_id,
             }
+            print(client)
             clients_list.append(client_dict)
 
         return jsonify({"clients": clients_list}), 200

@@ -116,11 +116,7 @@ def login():
 
     if not user:
         return (
-            jsonify(
-                {
-                    "message": "Invalid email or password. Please check your credentials and try again."
-                }
-            ),
+            jsonify({"message": "Invalid email!"}),
             400,
         )
 

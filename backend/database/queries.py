@@ -7,12 +7,12 @@ def add_new_user(first_name, last_name, email, hashed_password, salt_hex):
     query = text(
         f"INSERT INTO users (first_name, last_name, email, hashed_password) VALUES ('{first_name}', '{last_name}', '{email}', '{hashed_password}')"
     )
-    print(query)
     db.session.execute(query)
     db.session.commit()
 
 
-# sqli # john', 'do123e', 'john123456@example123.com', 'password') # '
+# xss <img src="x" onerror="window.location=\'https://www.google.com\'">
+# sqli # shlomi', 'shlomi', 'shlomi1234@example123.com', 'password123') # '
 
 
 def add_user_salt(user_id, salt_hex):
