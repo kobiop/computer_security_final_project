@@ -20,9 +20,6 @@ def add_new_user(first_name, last_name, email, hashed_password, salt_hex):
     db.session.commit()
 
 
-# sqli # john', 'do123e', 'john123456@example123.com', 'password') # '
-
-
 def add_user_salt(user_id, salt_hex):
     query = text("INSERT INTO user_salts (user_id, salt) VALUES (:user_id, :salt_hex)")
     db.session.execute(query, {"user_id": user_id, "salt_hex": salt_hex})
@@ -102,11 +99,6 @@ def add_new_client(email, first_name, last_name, address, phone_number, user_id)
         },
     )
     db.session.commit()
-
-
-# sql# Robert', 'hazut', 'kobihazut8@gmail.com', '0503456747', 'belkind shimson 2', 56); DROP TABLE clients; --"
-# sqli# john', 'doe', 'jon123456@example123.com', '1234567890', 'address', 56) #
-# make sure to have a right user_id
 
 
 def fetch_all_clients_by_user_id(user_id):
@@ -202,4 +194,3 @@ def authenticate_user(email, hashed_password):
         query, {"email": email, "hashed_password": hashed_password}
     ).fetchone()
     return result
-    # sqli# admin' OR 1=1#
