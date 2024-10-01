@@ -1,89 +1,85 @@
-markdown
-Copy code
-# Security Course Project
+# Security Course Project: SQL Injection and XSS Attacks Demonstration
 
-This project demonstrates how to perform SQL Injection (SQLI) and Cross-Site Scripting (XSS) attacks on computers. It is built using React for the frontend, Flask for the backend, and MySQL as the relational database.
+=
+## Description
 
-## Table of Contents
-- [Project Overview](#project-overview)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Frontend Setup](#frontend-setup)
-- [Backend Setup](#backend-setup)
-- [Database Configuration](#database-configuration)
-- [Usage](#usage)
-- [License](#license)
-
-## Project Overview
-
-This web application allows users to:
-- Register new accounts.
-- Log in to the site.
-- Recover their password if forgotten.
-- Recover their initiated password if desired.
-- Manage their customer list by adding or deleting customers.
-- Log out of the application.
+This project serves as a security course demonstration showcasing how SQL Injection (SQLI) and Cross-Site Scripting (XSS) attacks can be performed on web applications. The website is built using **React** for the frontend and **Flask** for the backend, with a **MySQL** relational database for data storage.
 
 ## Features
-- **User Registration**: Users can create a new account with their details.
-- **Login**: Registered users can log into the system.
-- **Password Recovery**: Users can recover forgotten passwords.
-- **Customer Management**: Users can add or delete customers.
-- **Logout**: Users can safely log out of the application.
+
+- **User Registration**: New users can create accounts to access the site.
+- **User Login**: Users can log in to their accounts securely.
+- **Password Recovery**: Users can recover their forgotten passwords.
+- **Password Change**: Users can initiate a password change if they wish.
+- **Customer Management**: Users can add and delete their customers.
+- **Logout Functionality**: Users can log out of their accounts.
 
 ## Technologies Used
+
 - **Frontend**: React
 - **Backend**: Flask
 - **Database**: MySQL
-- **HTTP Client**: Axios for making API requests between the frontend and backend.
+- **Communication**: Axios for HTTP requests
 
-## Frontend Setup
+## Installation
 
-1. **Navigate to the Frontend Directory**:
+Follow the steps below to set up the project locally.
+
+### Prerequisites
+
+- **Python 3.x**: Ensure Python is installed on your machine.
+- **Node.js**: Required for running the React frontend.
+- **MySQL**: A MySQL server should be installed and running.
+- **Git**: For cloning the repository.
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/your-repo.git
+cd your-repo
+```
+### Install Backend Dependencies
+```bash
+pip install -r requirements.txt
+```
+### Frontend Setup
+1. Navigate to the frontend directory (if applicable):
    ```bash
    cd frontend
-Install Frontend Dependencies:
-
-bash
-Copy code
+   ```
+2. Install frontend dependencies using npm:
+```bash
 npm install
-Run the React Application:
+```
+### Database Setup
+1. Create a new MySQL database for the project.
+2. Update the database connection string in your Flask configuration file (e.g., config.py, .env).
+3. Ensure the database schema is set up by running any necessary migrations (if applicable).
 
-bash
-Copy code
-npm start
-The application will be accessible at http://localhost:3000.
 
-Backend Setup
-Navigate to the Backend Directory:
-
-bash
-Copy code
-cd backend
-Install Backend Dependencies:
-
-bash
-Copy code
-pip install -r requirements.txt
-Configure the Database:
-
-Create a new database in MySQL (e.g., security_course_db).
-Update the database connection string in your configuration file (e.g., config.py) to reflect the newly created database.
-Run the Flask Application:
-
-bash
-Copy code
+### Run the Application
+1. Start the Flask backend server:
+```bash
 python main.py
-Once the server is running, you can access the backend API at http://localhost:5000.
+```
+2. In a new terminal window, navigate to the frontend directory (if applicable) and start the React application:
+```bash
+npm start
+```
+3. Open your browser and go to http://localhost:3000 to access the application.
 
-Database Configuration
-Ensure that MySQL server is running.
-Update the connection settings in config.py:
-python
-Copy code
-SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://username:password@localhost/security_course_db'
-Usage
-After setting up both the frontend and backend, you can register a new user and start exploring the functionalities of the application. Make sure to test for SQL Injection and Cross-Site Scripting vulnerabilities as part of the security course objectives.
 
-License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+
+### Security Vulnerabilities
+This project is intended for educational purposes only. The demonstration includes vulnerabilities like SQL Injection and Cross-Site Scripting (XSS) to help users understand and learn about security risks in web applications.
+
+
+### SQL Injection Example
+An example of an SQL injection attack can be demonstrated by modifying the login query with malicious input.
+
+### XSS Example
+Cross-site scripting attacks can be illustrated through forms that fail to sanitize user input.
+
+
+
+
