@@ -1,7 +1,5 @@
 # Security Course Project
 
-![Project Logo](link_to_logo.png) <!-- Add your project logo here -->
-
 ## Description
 
 This project serves as an educational tool for demonstrating SQL Injection (SQLI) and Cross-Site Scripting (XSS) attacks on web applications. It showcases a simple web application built with Flask, React, and MySQL, allowing users to interact with a demo environment designed to highlight common security vulnerabilities.
@@ -40,3 +38,12 @@ To set up this project locally, follow these steps:
 git clone https://github.com/kobiop/computer_security_final_project.git
 cd computer_security_final_project
 ```
+### Backend Setup
+
+1. **Navigate to the Backend Directory**:
+   ```bash
+   cd backend
+  ```
+2. ```pip install -r requirements.txt```
+3. ```python main.py```
+
