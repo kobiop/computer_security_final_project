@@ -1,6 +1,6 @@
 # Security Course Project: SQL Injection and XSS Attacks Demonstration
 
-=
+
 ## Description
 
 This project serves as a security course demonstration showcasing how SQL Injection (SQLI) and Cross-Site Scripting (XSS) attacks can be performed on web applications. The website is built using **React** for the frontend and **Flask** for the backend, with a **MySQL** relational database for data storage.
@@ -35,8 +35,8 @@ Follow the steps below to set up the project locally.
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/your-repo.git
-cd your-repo
+git clone https://github.com/yourusername/your-repo.git](https://github.com/kobiop/computer_security_final_project.git
+cd computer_security_final_project
 ```
 ### Install Backend Dependencies
 ```bash
@@ -68,11 +68,8 @@ npm start
 ```
 3. Open your browser and go to http://localhost:3000 to access the application.
 
-
-
 ### Security Vulnerabilities
 This project is intended for educational purposes only. The demonstration includes vulnerabilities like SQL Injection and Cross-Site Scripting (XSS) to help users understand and learn about security risks in web applications.
-
 
 ### SQL Injection Example
 An example of an SQL injection attack can be demonstrated by modifying the login query with malicious input.
